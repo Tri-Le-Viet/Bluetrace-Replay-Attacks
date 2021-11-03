@@ -40,9 +40,9 @@ async def read_gatt(address):
             charVal = json.loads(charVal.decode())
 
             # change to look like a central message
-            del charVal["mp"]
-            charVal["mc"] = ""
-            charVal["rs"] = random.randint(0, 20) # high value more likely to register as close contact
+            del charVal["modelP"]
+            charVal["modelC"] = ""
+            charVal["rs"] = rand.randint(-50, 20) # high value more likely to register as close contact
             print(f"Created contact message {charVal}")
 
     except Exception as e: # rule out all devices which aren't running the app
